@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>My New Website</title>
+        <link rel="icon" type="image/x-icon" href="websiteIcon.jpg">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <body style="background-color: white;">
+
+    <div class="title-box">
+        <p>         
+            <b>About Me</b>
+        </p>
+    </div>
+    
+    <div class="menu-links" id="openmenutab">
+        <img src="../menu.png" onclick="openmenu()">
+        <a href="#" onclick="openmenu()">MENU</a>
+            <div class="menu-box" id="menu">
+                <div class="right-links">
+                    <a href="contact.html">CONTACT</a>
+                    <img src="../close.png" onclick="closemenu()">
+                </div>
+
+                <div class="menu-internal-links">
+                    <br>
+                    <br>
+                    <a href="../index.html">Home</a>
+                    <a href="#" onclick="closemenu()">About Me</a>
+                    <a href="my projects.html">My Projects</a>
+                    <a href="notes.html">Notes</a>
+                    <a href="workout plan.html">Workout Plan</a>
+                    <a href="other.html">Other</a>
+                </div>
+
+            </div>
+    </div>
+
+    <script>
+        var menu=document.getElementById("menu");
+        var openmenutab=document.getElementById("openmenutab");
+
+        function closemenu(){
+            menu.style.top = "-100vh";
+        }
+
+        function openmenu(){
+            menu.style.top = "90px"; 
+        }
+    </script>
+
+    <div class=about-me-box1>
+        <h3 style=
+            "text-decoration: none;
+            color: black;
+            font-size: 15px;
+            padding: 10px">
+            Who am I?
+        </h3>
+        <p>
+            My name is Aidan Doyle and I am the creator of this website. I designed this website because
+            I was bored over summer. If I ever get too it there will be a photo of myself next to this
+            to show you who I am. 
+        </p>
+        <p>
+            I have put my emails up on this page for work/study related reasons, however if you don't
+            have my phone number or you are not emailing for a interview/job/teaching-position 
+            then please do not contact me.
+        </p>
+        <p>
+            I am currently studying in Trinity College Dublin and a recent graduate of Maynooth 
+            University. My main hobbies include playing Hockey, currently at Rathgar Hockey Club, 
+            and going to the gym. I also play for too much golf for my own good. Wicklow Golf 
+            club is where I am currently a member and it is one of the most pristine courses in the 
+            country. It also has one of the best young-adult membership deals I could find so I would
+            suggest joining.
+        </p>
+        <p>
+            Card collecting is another one of my crippling addictions. It started originally with Pokemon
+            cards, which had lead me to collect a full set of the original base set, among many more. 
+            Recently have I become quite fond of Magic The Gathering and this has lead me to invest more
+            of my money into this pit.
+        </p>
+        <p>
+            That pretty much covers it all, but if you're bothered to read the rest of this page 
+            will go into more detail.
+        </p>
+
+    </div>
+
+    <div class="about-me-photo1">
+        <img src="../photo_of_me.jpg">
+    </div>
+
+    <div class="about-me-box2">
+        <h3 style=
+            "text-decoration: none;
+            color: black;
+            font-size: 15px;
+            padding: 10px">
+            My Undergraduate Degree
+        </h3>
+        <p>
+            I recently graduated from my undergraduate degree (BSc) Theoretical Physics & Mathematics
+            with a 2.1 second class honors. Graduating with a tiny class of only 10 people, I am 
+            very grateful to Maynooth University for providing such a unique course which cannot be
+            found anywhere else in Ireland.
+        </p>
+        <p>
+            The degree (course code MH206) comprises of a 50/50 split between Theoretical Physics 
+            and pure Mathematics. It starts off incredibly difficult, thrusting students into second
+            third year module with the expectation that there will be significant self study done to
+            catch up.
+            <b>If you are looking for a fun freshers week don't do this course.</b>
+        </p>
+        <p>
+            In my personal experience, as you spend most of first year trying to catch up, there is
+            little time to actually gain an understanding of the concepts taught. I felt almost 
+            forced to learn off how to use the formula's and do calculations to keep pace, and that
+            was to my detriment in later years of the degree.
+        </p>
+        <p>
+            In the physics side we learned things such as the basics of doing ODE's, Quantum
+            Mechanics 1&2, Electromagnetism and Cosmology. The Theoretical Physics department in 
+            particular was incredibly helpful during our studies, providing us with any assistance we
+            needed.
+        </p>
+        <p>
+            The Mathematics part of the degree walked us through topics like Euclidian Geometry, Real 
+            and Complex Analysis and Topology. For anyone looking to study Pure Mathematics out of 
+            secondary school, I would make sure you do your research thoroughly. Pure Mathematics is 
+            nothing like the Maths you do in school, and is far more proof orientated, with many wordy
+            demonstrations required on assignments.
+        </p>
+        <p>
+            
+        </p>
+
+    </div>
+
+
+    <!--<div class="paragraph">
+        <p>This is going to be a little website I build for my own entertainment. 
+            <br>
+            My aim is for this to include multiple sections with a menu which will link to each of them.
+            <br> 
+            I intend to be able to upload my notes here, 
+            have links to my two dissertation project and create a rotating website with my gym workouts on them
+        </p>
+    
+    </div>
+
+    <h1 style="background-color: blue;color:white">This is a Heading</h1>
+    <p>Yo mama so fat, <i>when she ordered a waterbed, they put</i> a blanket over the atlantic ocean</p>
+-->
+    </body>
+
+
+</html>

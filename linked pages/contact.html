@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>My New Website</title>
+        <link rel="icon" type="image/x-icon" href="websiteIcon.jpg">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <body style="background-color: white;">
+
+    <div class="title-box">
+        <p>         
+            <b>Contact</b>
+        </p>
+    </div>
+
+    <div class="menu-links" id="openmenutab">
+        <img src="../menu.png" onclick="openmenu()">
+        <a href="#" onclick="openmenu()">MENU</a>
+            <div class="menu-box" id="menu">
+                <div class="right-links">
+                    <a href="#" onclick="closemenu()">CONTACT</a>
+                    <img src="../close.png" onclick="closemenu()">
+                </div>
+
+                <div class="menu-internal-links">
+                    <br>
+                    <br>
+                    <a href="../index.html">Home</a>
+                    <a href="about me.html">About Me</a>
+                    <a href="my projects.html">My Projects</a>
+                    <a href="notes.html">Notes</a>
+                    <a href="workout plan.html">Workout Plan</a>
+                    <a href="other.html">Other</a>
+                </div>
+
+            </div>
+    </div>
+
+    <script>
+        var menu=document.getElementById("menu");
+        var openmenutab=document.getElementById("openmenutab");
+
+        function closemenu(){
+            menu.style.top = "-100vh";
+        }
+
+        function openmenu(){
+            menu.style.top = "90px"; 
+        }
+    </script>
+
+<!--<div class="contact-box">
+        <pre>
+            Aidan Doyle
+            email: adn.dyl21@gmail.com
+            linkedin: 
+        </pre>
+    </div> 
+
+    <div class="paragraph">
+        <p>This is going to be a little website I build for my own entertainment. 
+            <br>
+            My aim is for this to include multiple sections with a menu which will link to each of them.
+            <br> 
+            I intend to be able to upload my notes here, 
+            have links to my two dissertation project and create a rotating website with my gym workouts on them
+        </p>
+    
+    </div>
+
+    <h1 style="background-color: blue;color:white">This is a Heading</h1>
+    <p>Yo mama so fat, <i>when she ordered a waterbed, they put</i> a blanket over the atlantic ocean</p>
+-->
+    </body>
+
+
+</html>

@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   box-sizing: border-box;
+}
+
+.title-box{
+    width: 99%;
+    background-color: #4b4b4b;
+    position: absolute;
+    left: 0.5%;
+    top: 11px;  
+    border-radius: 3px;
+}
+
+.title-box p{
+    text-decoration: none;
+    background-color: #4b4b4b;
+    color: black;
+    font-size: 50px;
+    margin: 4px;
+    border-radius: 2px;
+    padding-left: 220px;
+}
+
+.menu-links{
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-links img{
+    width: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menu-links a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px 40px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.menu-box{
+    width: 85%;
+    background-color: black;
+    position: absolute;
+    top: 90px;
+    left: 7.5%;
+    padding: 50px 100px;
+    border-radius: 5px;
+    transition: top 1s;
+    z-index: 200;
+}
+
+.right-links{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.right-links img{
+    width: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.right-links a{ 
+    text-decoration: none;
+    color: black;
+    background-color: red;
+    padding: 15px 40px;
+    border-radius: 5px;
+}
+
+.menu-internal-links a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: fit-content;
+    margin: 5px 0px;
+    font-size: 20px;
+}
+
+.menu-internal-links a:hover{
+    font-weight: 700;
+    background-color: red;
+}
+
+
+.about-me-box1{
+    width: 60%;
+    background-color: rgb(220, 222, 246);
+    position: absolute;
+    left: 6.5%;
+    top: 100px;
+    border-radius: 2px;
+    z-index: 150;
+    margin-right: 10px;
+}
+
+.about-me-box1 p{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.about-me-photo1{
+    width: 325px;
+    background-color: white;
+    top: 106px;
+    right: 6.5%;
+    position: absolute;
+}
+
+.about-me-photo1 img{
+    width: 324px;
+    height: 432px;
+    border-radius: 2px;
+}
+
+.about-me-box2{
+    width: 60%;
+    background-color: rgb(110, 121, 236);
+    position: absolute;
+    right: 4%;
+    top: 575px;
+    border-radius: 2px;
+    z-index: 150;
+}
+
+.about-me-box2 p{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+
+.homepage-text{
+    width: 99%;
+    background-color: #bab8ba;
+    position: absolute;
+    left: 0.5%;
+    top: 85px;
+    border-radius: 5px;
+    z-index: 150;
+}
+
+.homepage-text p{
+    text-decoration: none;
+    background-color: #bab8ba;
+    color: black;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.my-projects-box1{
+    width: 97%;
+    background-color: rgb(220, 222, 246);
+    position: absolute;
+    left: 1.5%;
+    top: 92px;
+    border-radius: 2px;
+    z-index: 150;
+    margin-right: 10px;
+}
+
+.my-projects-box1 p{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.my-projects-EJSproject-box{
+    width: 65%;
+    background-color: rgb(145, 154, 250);
+    position: absolute;
+    left: 1%;
+    top: 230px;
+    border-radius: 2px;
+    z-index: 150;
+    margin-right: 10px;
+}
+
+.my-projects-EJSproject-box p{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.my-projects-EJSproject-box a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.EJS-project-GIF{
+    width: 325px;
+    background-color: white;
+    top: 205px;
+    right: 8.5%;
+    position: absolute;
+}
+
+.EJS-project-GIF img{
+    width: 427px;
+    height: 320px;
+    border-radius: 2px;
+}
