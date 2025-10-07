@@ -1,118 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <title>My New Website</title>
-        <link rel="icon" type="image/x-icon" href="websiteIcon.jpg">
-        <link rel="stylesheet" href="../style.css">
-    </head>
+<head>
+    <title>My Projects</title>
+    <link rel="icon" type="image/x-icon" href="../websiteIcon.jpg">
+    <link rel="stylesheet" href="../style.css">
+</head>
 
-    <body style="background-color: white;">
+<body>
 
+    <!-- Title -->
     <div class="title-box">
-        <p>         
-            <b>My Projects</b>
-        </p>
+        <p><b>My Projects</b></p>
     </div>
 
+    <!-- Menu -->
     <div class="menu-links" id="openmenutab">
         <img src="../menu.png" onclick="openmenu()">
         <a href="#" onclick="openmenu()">MENU</a>
-            <div class="menu-box" id="menu">
-                <div class="right-links">
-                    <a href="contact.html">CONTACT</a>
-                    <img src="../close.png" onclick="closemenu()">
-                </div>
-
-                <div class="menu-internal-links">
-                    <br>
-                    <br>
-                    <a href="../index.html">Home</a>
-                    <a href="about me.html">About Me</a>
-                    <a href="#" onclick="closemenu()">My Projects</a>
-                    <a href="notes.html">Notes</a>
-                    <a href="workout plan.html">Workout Plan</a>
-                    <a href="other.html">Other</a>
-                </div>
-
+        <div class="menu-box" id="menu">
+            <div class="right-links">
+                <a href="contact.html">CONTACT</a>
+                <img src="../close.png" onclick="closemenu()">
             </div>
+
+            <div class="menu-internal-links">
+                <a href="../index.html">Home</a>
+                <a href="about me.html">About Me</a>
+                <a href="#" onclick="closemenu()">My Projects</a>
+                <a href="notes.html">Notes</a>
+                <a href="workout plan.html">Workout Plan</a>
+                <a href="other.html">Other</a>
+            </div>
+        </div>
     </div>
 
+    <!-- JS for menu -->
     <script>
-        var menu=document.getElementById("menu");
-        var openmenutab=document.getElementById("openmenutab");
-
-        function closemenu(){
+        var menu = document.getElementById("menu");
+        function closemenu() {
             menu.style.top = "-100vh";
         }
-
-        function openmenu(){
+        function openmenu() {
             menu.style.top = "90px"; 
         }
     </script>
 
-    <div class=my-projects-box1>
-        <h3 style=
-            "text-decoration: none;
-            color: black;
-            font-size: 15px;
-            padding: 10px">
-            My  projects
-        </h3>
-        <p>
-           Below here I will list a number of projects that I have undertaken over the last few years. Firstly
-           I will list the number of academic projects I have undertaken during my undergraduate degree and now
-           in my masters. This ranges from predicting modeling of an Earth-Jupiter-Sun system to lattice simulation
-           to find an optimal lattice constant. Then after that I will list a few personal projects that I have
-           completed, and maybe a few that are still a working progress.
-        </p>
+    <!-- Intro section -->
+    <div class="flex-section">
+        <div class="text">
+            <h3>My Projects</h3>
+            <p>
+                Below here I will list a number of projects that I have undertaken over the last few years. 
+                Firstly I will list the number of academic projects I have undertaken during my undergraduate 
+                degree and now in my masters. This ranges from predicting modeling of an Earth-Jupiter-Sun system 
+                to lattice simulation to find an optimal lattice constant. Then after that I will list a few 
+                personal projects that I have completed, and maybe a few that are still a work in progress.
+            </p>
+        </div>
     </div>
 
-    <div class=my-projects-EJSproject-box>
-        <h3 style=
-            "text-decoration: none;
-            color: black;
-            font-size: 15px;
-            padding: 10px">
-            Gravitational interactions in the Earth-Jupiter-Sun system.
-        </h3>
-        <p>
-            <b><i>Description:</i></b> In our brief for this project we were given two equations of motion
-            for the original 2-body problem, where we would replicate the motion of the planets around a 
-            stationary object using Runge-Kutta integration (Earth-Sun and Jupiter-Sun). We were then given 
-            four more equations of motion, which once integrated would yield an effective three body system.
-            <br>
-            <b><i>Abstract:</i></b> In this project we investigate the Earth-Jupiter-Sun System and observe the effect Jupiter has on
-            Earth’s orbit. We do this by plotting two separate 2-body problems (Earth-Sun, Jupiter-Sun)
-            so we can analyse the effects on Earth’s orbit when we plot the 3-body problem. Mainly the
-            changes in the perihelion/aphelion positions and also calculating the semimajor axis of the
-            orbit and what effect that has on the eccentricity of the orbit.
-            <br>
-            Find here the required links to <a href="../MP354_Project_MLK.pdf"><b>the report,</b></a>
-            <a href="../EJS_model_brief.pdf"><b> the brief,</b></a> and <b>the code.</b>
-        </p>
-    </div>
-    
-    <div class="EJS-project-GIF">
-        <img src="../EJSmodel_GIF.gif">
+    <!-- Project Category Buttons -->
+    <div class="project-category-buttons" style="text-align: center; margin: 40px 0;">
+        <button class="category-btn active" onclick="showSection('edu-projects', this)">Educational Projects</button>
+        <button class="category-btn" onclick="showSection('masters-project', this)">Master’s Thesis</button>
+        <button class="category-btn" onclick="showSection('personal-projects', this)">Personal Projects</button>
     </div>
 
+    <!-- Educational Projects Section -->
+    <div id="edu-projects" class="project-section">
+        <!-- Example project: Earth-Jupiter-Sun -->
+        <div class="flex-section">
+            <div class="text">
+                <h3>Gravitational Interactions in the Earth-Jupiter-Sun System</h3>
+                <p>
+                    <b><i>Description:</i></b> This project investigated how the gravitational influence of Jupiter affects Earth’s orbit around the Sun. 
+                    Using Python and numerical integration methods (Runge–Kutta and SciPy’s <code>odeint</code>), we modeled two separate two-body 
+                    systems before combining them into a full three-body simulation. By varying initial velocities and mass parameters, we examined 
+                    how Jupiter’s gravitational pull perturbs Earth’s orbital shape, eccentricity, and semi-major axis over long timescales. 
+                    The resulting plots and animations visualize orbital precession and instability, demonstrating the challenges of modeling 
+                    non-linear celestial systems where no analytic solution exists.
+                </p>
+                <p>
+                    Find here the required links to 
+                    <a href="../MP354_Project_MLK.pdf"><b>the report,</b></a>
+                    <a href="../EJS_model_brief.pdf"><b>the brief,</b></a> 
+                    and <a href="https://github.com/Aidan-Doyle-2/Earth-Jupiter-Sun-Three-Body-Orbit-System"><b>the code.</b></a>
+                </p>
+            </div>
+            <div class="photo">
+                <img src="../EJSmodel_GIF.gif" alt="EJS Model GIF">
+            </div>
+        </div>
 
-    <!--<div class="paragraph">
-        <p>This is going to be a little website I build for my own entertainment. 
-            <br>
-            My aim is for this to include multiple sections with a menu which will link to each of them.
-            <br> 
-            I intend to be able to upload my notes here, 
-            have links to my two dissertation project and create a rotating website with my gym workouts on them
-        </p>
-    
+        <!-- Example project: JWST Black Hole Growth -->
+        <div class="flex-section">
+            <div class="photo">
+                <img src="../SMBH_photo.png" alt="Black_Hole_Populations_VS_Accretion_Regions">
+            </div>
+            <div class="text">
+                <h3>Mapping JWST Black Hole Data To Predicted Optimal Growth Conditions</h3>
+                <p>
+                    <b><i>Description:</i></b> This project explores how the first supermassive black holes observed by the James Webb Space Telescope 
+                    could have formed so early in the universe. Using analytical models and Python simulations, we studied how black hole seeds grow 
+                    under different physical conditions, focusing on factors like gas density, seed mass, and angular momentum. By combining these effects, 
+                    we identified regions in parameter space where growth becomes highly efficient and compared them with current JWST detections.
+                </p>
+                <p>
+                    The simulations, created with NumPy, SciPy, and Matplotlib, reproduced the theoretical conditions for optimal accretion and tracked 
+                    black hole growth over time. We then mapped real JWST black hole data onto these models, showing which observations fit within the 
+                    predicted high-efficiency growth zone and which appear to exceed current theoretical limits.
+                </p>
+                <p>
+                    Find here the required links to 
+                    <a href="../Mapping_JWST_Black_Hole_Data_To_Predicted_Optimal_Growth_Conditions.pdf"><b>the report,</b></a>
+                    and 
+                    <a href="https://github.com/Aidan-Doyle-2/Optimal-Conditions-for-Black-Hole-Growth"><b>the code.</b></a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Example project: Lennard-Jones FCC Metals -->
+        <div class="flex-section" style="font-size: 0.95em;">
+            <div class="text">
+                <h3>Optimizing Lattice Constants for FCC Metals using Lennard–Jones Potentials</h3>
+                <p>
+                    <b><i>Description:</i></b> In this project I reproduced results from 
+                    <i>Kanhaiya et al. (2021)</i>, which derived 
+                    Lennard–Jones parameters capable of describing elastic and structural properties 
+                    for a range of face-centred cubic metals. Using Python, I simulated ten FCC metals 
+                    and iron to determine their equilibrium lattice constants by minimizing the total 
+                    potential energy per atom.
+                </p>
+                <p>
+                    I first verified the model on Argon using the standard 12–6 Lennard–Jones potential, 
+                    confirming that the minimization correctly predicts the equilibrium spacing of a simple 
+                    system. The main part of the project then extended this to the 9–6 potential, which better 
+                    approximates metallic bonding. I generated periodic FCC supercells, calculated pairwise 
+                    atomic interactions within a cutoff radius, and applied the Nelder–Mead optimization 
+                    algorithm to locate the minimum-energy lattice constant for each element.
+                </p>
+                <p>
+                    The calculated values were compared to experimental lattice parameters, showing good agreement 
+                    and validating the ability of the Lennard–Jones potential to capture key trends in metallic 
+                    bonding despite its simplicity. This work provided practical insight into how interatomic 
+                    potentials can be used to model and understand bulk metallic systems at the atomistic level.
+                </p>
+                <p>
+                    Find the full code and results here in my 
+                    <a href="https://github.com/Aidan-Doyle-2/Optimizing-Lattice-Constants-for-10-FCC-metals-and-Iron" target="_blank">
+                        <b>GitHub Repository.</b>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Example project: Neural Network Potential for Water -->
+        <div class="flex-section">
+            <div class="text">
+                <h3>Predicting Potential Energies for Water Molecules using Neural Networks</h3>
+                <p>
+                    <b><i>Description:</i></b> This project explores how a neural network can learn to predict the potential energy 
+                    of water molecules directly from their atomic coordinates. Using TensorFlow and Keras, the model was trained 
+                    to map molecular geometry to total energy, bridging quantum chemistry and modern machine learning techniques.
+                </p>
+                <p>
+                    The dataset included rotated and unrotated configurations of H₂O, with total energies provided in 
+                    <code>.ENER</code> files. After preprocessing and feature scaling, a feed-forward neural network with two 
+                    hidden layers of 64 neurons (ReLU activation) was trained using the Adam optimizer and mean squared error loss. 
+                    Early stopping was implemented to ensure stable convergence and prevent overfitting.
+                </p>
+                <p>
+                    The trained model achieved low prediction error and smooth validation performance, demonstrating how 
+                    data-driven methods can replicate potential energy surfaces without explicit quantum mechanical computation. 
+                    This work highlights the intersection between computational physics and machine learning in molecular modeling.
+                </p>
+                <p>
+                    Find the full 
+                    <a href="../PE of water molecules report.pdf" target="_blank"><b>report here,</b></a>
+                    and the code is available in this
+                    <a href="https://github.com/Aidan-Doyle-2/Predicting-potential-energy-of-water-using-neural-networks" target="_blank"><b>GitHub Repository.</b></a>
+                </p>
+            </div>
+            <div class="photo">
+                <img src="../Graph for ML.png" alt="Machine Learning Energy Graph">
+            </div>
+        </div>
     </div>
 
-    <h1 style="background-color: blue;color:white">This is a Heading</h1>
-    <p>Yo mama so fat, <i>when she ordered a waterbed, they put</i> a blanket over the atlantic ocean</p>
--->
-    </body>
+    <!-- Master's Thesis Section -->
+    <div id="masters-project" class="project-section masters-section" style="display:none;">
+
+        <!-- Title and intro -->
+        <div class="masters-intro">
+            <h3>Optimising Quantum Gate Fidelity in Non-Markovian Open Systems</h3>
+            <p>
+                This research project formed the basis of my Master’s thesis, where I investigated how quantum gates can be 
+                executed reliably in open systems that interact with an environment. In realistic quantum devices, these 
+                interactions lead to decoherence — the gradual loss of quantum information. However, when the environment 
+                retains memory of past interactions, known as <i>non-Markovian dynamics</i>, lost information can temporarily 
+                flow back into the system, potentially improving gate performance.
+            </p>
+            <p>
+                The work focused on building and simulating open quantum systems using the <b>OQuPy</b> framework 
+                (Open Quantum Python), a package that enables process-tensor-based simulations of non-Markovian dynamics. 
+                My goal was to reconstruct the effective quantum channel produced by a time-dependent Hamiltonian, compare it 
+                against a target unitary gate, and measure the resulting gate fidelity. 
+            </p>
+        </div>
+
+        <!-- Image 1: Superoperator to Choi -->
+        <div class="masters-flex">
+            <div class="masters-photo">
+                <img src="../super to choi Wood et al 22.png" alt="Superoperator to Choi transformation diagram">
+            </div>
+            <div class="masters-text">
+                <p>
+                    To achieve this, I evolved a complete basis of input density matrices through the simulated dynamics to 
+                    reconstruct the system’s <i>superoperator</i>. This operator fully describes how any quantum state transforms 
+                    over time. The superoperator was then reshaped into a <i>Choi matrix</i>, a representation that preserves 
+                    both input and output correlations and allows extraction of <i>Kraus operators</i> — the key mathematical objects 
+                    that describe how noise acts on the system. 
+                </p>
+                <p>
+                    By performing an eigendecomposition of the Choi matrix, I derived the Kraus operators numerically and computed 
+                    the <b>average gate fidelity</b> by comparing the noisy channel to an ideal target gate. This process, based on 
+                    the formalism outlined in <i>Wood et al. (2022)</i> and <i>Pedersen et al. (2007)</i>, provided a robust way to 
+                    quantify how closely real open-system dynamics can reproduce ideal quantum logic.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 2: Process Tensor Diagram -->
+        <div class="masters-flex reverse">
+            <div class="masters-photo">
+                <img src="../process tensor photo 1.png" alt="Process tensor structure diagram">
+            </div>
+            <div class="masters-text">
+                <p>
+                    The core of the simulation relied on the <b>process tensor</b> — a higher-order object that encodes the influence 
+                    of the environment across multiple timesteps. Each tensor index represents a past system-environment interaction, 
+                    meaning that past control actions can directly influence future evolution. This framework allowed me to capture 
+                    memory effects that are invisible in traditional Markovian master equations. 
+                </p>
+                <p>
+                    Using this approach, I simulated systems under both Markovian and non-Markovian conditions by varying the bath 
+                    correlation time parameter. The results revealed that as the environment’s memory length increases, coherence 
+                    revivals begin to emerge, producing oscillatory behaviour in the fidelity. This confirmed that non-Markovianity 
+                    enables partial recovery of information lost to the environment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image 3: Fidelity Plot -->
+        <div class="masters-flex">
+            <div class="masters-photo">
+                <img src="../Fidelity Markovian vs non-Markovian.png" alt="Fidelity comparison for Markovian vs non-Markovian dynamics">
+            </div>
+            <div class="masters-text">
+                <p>
+                    The fidelity plots below compare quantum gate performance under different environmental models. 
+                    The orange curve shows a Markovian regime, where fidelity decays monotonically due to irreversible 
+                    decoherence. The green curve, corresponding to a non-Markovian regime, shows clear oscillations — 
+                    a signature of information backflow. This behaviour highlights the potential to use environmental 
+                    memory as a stabilising resource in quantum computation.
+                </p>
+                <p>
+                    Finally, I implemented a simple form of control optimisation, tuning the system Hamiltonian parameters 
+                    to minimise fidelity loss over time. These optimised simulations achieved near-unit fidelity for short 
+                    timescales, demonstrating how non-Markovian feedback can be harnessed to enhance quantum gate robustness.
+                </p>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="masters-links">
+            <p>
+                Read the full <a href="../Aidan_Doyle_Dissertation_Final_Final.pdf" target="_blank">Thesis here,</a> 
+                or explore all simulation code and analysis notebooks in my 
+                <a href="https://github.com/Aidan-Doyle-2/Research_Internship_Thesis" target="_blank">GitHub Repository</a>.
+            </p>
+        </div>
+
+    </div>
 
 
+
+    <!-- Personal Projects Section -->
+    <div id="personal-projects" class="project-section" style="display: none;">
+        <div class="flex-section">
+            <div class="text">
+                <h3>Personal Projects</h3>
+                <p>
+                    A collection of smaller coding and simulation projects built for fun — from data visualization to 
+                    physics-based experiments. More to come soon!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function showSection(sectionId, btn) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.project-section');
+        sections.forEach(section => section.style.display = 'none');
+
+        // Remove 'active' style from all buttons
+        const buttons = document.querySelectorAll('.category-btn');
+        buttons.forEach(button => button.classList.remove('active'));
+
+        // Show the selected section and highlight the clicked button
+        document.getElementById(sectionId).style.display = 'block';
+        btn.classList.add('active');
+    }
+    </script>
+
+</body>
 </html>
