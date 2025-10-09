@@ -483,17 +483,33 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   overflow: hidden;
+  perspective: 1000px; /* for the 3D rotation effect */
+  min-height: 520px;   /* 🔥 fixes layout jump — consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .showcase-slide {
-  display: none;
-  text-align: center;
-  padding: 30px 0 50px;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.97) rotateY(15deg);
+  transition: all 0.8s ease;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .showcase-slide.active {
-  display: block;
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
+  pointer-events: all;
+  z-index: 5;
 }
+
 
 /* --- Image stack --- */
 .image-stack {
@@ -556,8 +572,9 @@ body {
   justify-content: space-between;
   transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
   pointer-events: none;
+  z-index: 20; /* 🔥 Keeps buttons on top of images */
 }
 
 .showcase-carousel:hover .showcase-controls {
@@ -566,14 +583,15 @@ body {
 }
 
 .showcase-controls button {
-  background: rgba(214, 40, 40, 0.85);
+  background: rgba(214, 40, 40, 0.7);
   border: none;
   color: white;
   font-size: 1.8rem;
   padding: 10px 16px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  z-index: 25; /* 🔥 Ensures button clicks always register */
 }
 
 .showcase-controls button:hover {
@@ -581,6 +599,7 @@ body {
   background: #d62828;
   transform: scale(1.1);
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -590,4 +609,18 @@ body {
   }
   .image-stack img:nth-child(1) { transform: rotate(-3deg) scale(0.95); }
   .image-stack img:nth-child(3) { transform: rotate(3deg) scale(0.95); }
+}
+
+/* --- Slide transition animations --- */
+.showcase-slide {
+  opacity: 0;
+  transform: rotateY(20deg);
+  transition: all 0.8s ease;
+}
+
+.showcase-slide.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+  position: relative;
+  z-index: 5;
 }

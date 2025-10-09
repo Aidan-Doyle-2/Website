@@ -58,7 +58,11 @@
                 <img src="fidelity tcut combined.png" alt="Photo 2">
                 <img src="process tensor part 1.png" alt="Photo 3">
                 </div>
-                <p class="showcase-caption">Running open quantum simulations using process tensors.</p>
+                <p class="showcase-caption">I recently completed my thesis with Trinity College Dublin.
+                    I studied the effects of non-Markovian dynamics on the average gate fidelity of
+                    open quantum systems. For more information look 
+                    <a href="linked pages/my projects.html#masters-thesis">here.</a>
+                </p>
             </div>
 
             <div class="showcase-slide">
@@ -128,7 +132,12 @@
             let current = 0;
 
             function updateSlides() {
-            slides.forEach((s, i) => s.classList.toggle('active', i === current));
+                slides.forEach((s, i) => {
+                    s.classList.remove('active');
+                    s.style.zIndex = i === current ? 5 : 0;
+                });
+                const activeSlide = slides[current];
+                activeSlide.classList.add('active');
             }
 
             next.addEventListener('click', () => {
