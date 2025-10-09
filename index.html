@@ -1,78 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <title>My New Website</title>
-        <link rel="icon" type="image/x-icon" href="websiteIcon.jpg">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <title>Home | Aidan Doyle</title>
+    <link rel="icon" type="image/x-icon" href="websiteIcon.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body style="background-color: white;">
+<body style="background-color: white;">
 
+    <!-- Title -->
     <div class="title-box">
-        <p>         
-            <b>Home</b>
-        </p>
-    </div>          
+        <p><b>Home</b></p>
+    </div>
 
+    <!-- Menu -->
     <div class="menu-links" id="openmenutab">
         <img src="menu.png" onclick="openmenu()">
         <a href="#" onclick="openmenu()">MENU</a>
-            <div class="menu-box" id="menu">
-                <div class="right-links">
-                    <a href="linked pages/contact.html">CONTACT</a>
-                    <img src="close.png" onclick="closemenu()">
-                </div>
+        <div class="menu-box" id="menu">
+            <div class="right-links">
+                <a href="linked pages/contact.html">CONTACT</a>
+                <img src="close.png" onclick="closemenu()">
+            </div>
 
-                <div class="menu-internal-links">
-                    <br>
-                    <br>
-                    <a href="#" onclick="closemenu()">Home</a>
-                    <a href="linked pages/about me.html">About Me</a>
-                    <a href="linked pages/my projects.html">My Projects</a>
-                    <a href="linked pages/notes.html">Notes</a>
-                    <a href="linked pages/workout plan.html">Workout Plan</a>
-                    <a href="linked pages/other.html">Other</a>
-                </div>
-
+            <div class="menu-internal-links">
+                <br><br>
+                <a href="#" onclick="closemenu()">Home</a>
+                <a href="linked pages/about me.html">About Me</a>
+                <a href="linked pages/my projects.html">My Projects</a>
+                <a href="linked pages/notes.html">Notes</a>
+                <a href="linked pages/workout plan.html">Workout Plan</a>
+                <a href="linked pages/other.html">Other</a>
             </div>
         </div>
-    
     </div>
 
     <script>
-        var menu=document.getElementById("menu");
-        var openmenutab=document.getElementById("openmenutab");
-
-        function closemenu(){
-            menu.style.top = "-100vh";
-        }
-
-        function openmenu(){
-            menu.style.top = "90px"; 
-        }
+        var menu = document.getElementById("menu");
+        function closemenu() { menu.style.top = "-100vh"; }
+        function openmenu() { menu.style.top = "90px"; }
     </script>
 
-    <div class="homepage-text">
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+        <h2>What I'm Currently Up To</h2>
         <p>
-            This is website I have created for my own entertainment. 
-            It does not serve any particular specific purpose however 
-            I will try to include as much of my undergraduate college work as possible,
-            along with any projects I completed.
-            <br>
-            <br>
-            This is in no way (and probably never will be) a complete website and is 
-            purely a summer project.
-            <br>
-            <br>
-            If you wish to know more about me or get in contact, check out the correct page.
-            If you are a Theoretical Physics // Pure Mathematics student looking for notes or solutions
-            they will be uploaded when I have the chance.
-
+            I'm currently working on expanding my portfolio with quantum computing simulations,
+            machine learning projects, and this website itself. Below you can find an overview
+            of some of my recent work and where to learn more.
         </p>
-    </div>
 
-    </body>
+        <!-- IMAGE SLIDER -->
+        <div class="showcase-carousel">
+            <div class="showcase-slide active">
+                <div class="image-stack">
+                <img src="fidelity dissipation Markovian vs non-Markovian.png" alt="Photo 1">
+                <img src="fidelity tcut combined.png" alt="Photo 2">
+                <img src="process tensor part 1.png" alt="Photo 3">
+                </div>
+                <p class="showcase-caption">Running open quantum simulations using process tensors.</p>
+            </div>
+
+            <div class="showcase-slide">
+                <div class="image-stack">
+                <img src="images/current2a.jpg" alt="Photo 1">
+                <img src="images/current2b.jpg" alt="Photo 2">
+                <img src="images/current2c.jpg" alt="Photo 3">
+                </div>
+                <p class="showcase-caption">Developing this website and refining my web design.</p>
+            </div>
+
+            <div class="showcase-slide">
+                <div class="image-stack">
+                <img src="images/current3a.jpg" alt="Photo 1">
+                <img src="images/current3b.jpg" alt="Photo 2">
+                <img src="images/current3c.jpg" alt="Photo 3">
+                </div>
+                <p class="showcase-caption">Training neural networks to predict molecular energies.</p>
+            </div>
+
+            <div class="showcase-controls">
+                <button class="showcase-prev">❮</button>
+                <button class="showcase-next">❯</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section class="home-section">
+        <div class="home-text">
+            <h3>About Me</h3>
+            <p>
+                I'm Aidan Doyle, a physics graduate and aspiring researcher with a strong
+                background in quantum theory, programming, and data analysis.  
+                My academic path has taken me from France to the Netherlands, Australia, and now Ireland —
+                where I completed my MSc in Quantum Science & Technology at Trinity College Dublin.
+            </p>
+            <a href="linked pages/about me.html" class="home-btn">Learn More →</a>
+        </div>
+        <div class="home-photo">
+            <img src="images/about_photo.jpg" alt="Aidan Doyle Portrait">
+        </div>
+    </section>
+
+    <!-- MY PROJECTS SECTION -->
+    <section class="home-section reverse">
+        <div class="home-photo">
+            <img src="images/projects_photo.jpg" alt="Coding or simulation project">
+        </div>
+        <div class="home-text">
+            <h3>My Projects</h3>
+            <p>
+                My projects range from open quantum system simulations using OQuPy, to
+                neural network training for molecular energy predictions, to C++ quantum
+                gate simulations. Each project blends physics, coding, and curiosity.
+            </p>
+            <a href="linked pages/my projects.html" class="home-btn">Explore Projects →</a>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.showcase-carousel').forEach(carousel => {
+            const slides = carousel.querySelectorAll('.showcase-slide');
+            const next = carousel.querySelector('.showcase-next');
+            const prev = carousel.querySelector('.showcase-prev');
+            let current = 0;
+
+            function updateSlides() {
+            slides.forEach((s, i) => s.classList.toggle('active', i === current));
+            }
+
+            next.addEventListener('click', () => {
+            current = (current + 1) % slides.length;
+            updateSlides();
+            });
+
+            prev.addEventListener('click', () => {
+            current = (current - 1 + slides.length) % slides.length;
+            updateSlides();
+            });
+
+            updateSlides();
+        });
+    </script>
 
 
+</body>
 </html>

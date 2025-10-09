@@ -45,7 +45,7 @@ body {
 .menu-links a {
   text-decoration: none;
   color: #fff;
-  background: #e63946;
+  background: #d62828;
   padding: 10px 24px;
   border-radius: 6px;
   transition: background 0.3s;
@@ -87,7 +87,7 @@ body {
 .right-links a {
   text-decoration: none;
   color: #fff;
-  background: #e63946;
+  background: #d62828;
   padding: 8px 18px;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -109,7 +109,7 @@ body {
 }
 
 .menu-internal-links a:hover {
-  background: #e63946;
+  background: #d62828;
   font-weight: 600;
 }
 
@@ -183,7 +183,7 @@ body {
 .category-btn {
   background-color: #222;          /* dark gray / black base */
   color: #fff;                     /* white text */
-  border: 2px solid #e63946;       /* your site’s red accent border */
+  border: 2px solid #d62828;       /* your site’s red accent border */
   padding: 12px 28px;
   margin: 0 10px;
   border-radius: 8px;
@@ -194,15 +194,15 @@ body {
 }
 
 .category-btn:hover {
-  background-color: #e63946;       /* bright red hover */
+  background-color: #d62828;       /* bright red hover */
   color: #fff;
   transform: scale(1.05);
 }
 
 .category-btn.active {
-  background-color: #e63946;       /* active = solid red */
+  background-color: #d62828;       /* active = solid red */
   color: #fff;
-  border-color: #e63946;
+  border-color: #d62828;
 }
 
 /* Masters Thesis Layout */
@@ -271,7 +271,7 @@ body {
 }
 
 .masters-links a {
-  color: #e63946;
+  color: #d62828;
   font-weight: 600;
   text-decoration: none;
 }
@@ -295,7 +295,7 @@ body {
 .about-btn {
     background-color: #3a3a3a;
     color: white;
-    border: none;
+    border: 2px solid #d62828;
     padding: 12px 28px;
     margin: 0 10px;
     border-radius: 10px;
@@ -305,11 +305,11 @@ body {
 }
 
 .about-btn:hover {
-    background-color: #5c5c5c;
+    background-color: #d62828;
 }
 
 .about-btn.active {
-    background-color: #e63946;
+    background-color: #d62828;
 }
 
 .about-section {
@@ -329,3 +329,265 @@ body {
     display: block;
 }
 
+.contact-button {
+  display: block;
+  background-color: #3a3a3a;   /* red */
+  color: white; 
+  border: 2px solid #d62828;                /* black text */
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-button:hover {
+  background-color: #d62828;   /* darker red hover */
+  transform: translateY(-3px);
+}
+
+.contact-button h4 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  color: white;                 /* black text */
+}
+
+.contact-button p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: white;
+}
+
+/* ---------- HOME PAGE SECTIONS ---------- */
+
+.intro-section {
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.intro-section h2 {
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.intro-section p {
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ---------- UNIVERSAL SLIDER STYLE ---------- */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slideAnimation 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes slideAnimation {
+  0%, 25% { transform: translateX(0%); }
+  33%, 58% { transform: translateX(-100%); }
+  66%, 91% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+/* ---------- HOME PAGE FLEX SECTIONS ---------- */
+
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.home-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.home-text {
+  flex: 1.2;
+}
+
+.home-photo {
+  flex: 1;
+}
+
+.home-photo .slider {
+  height: 280px;
+}
+
+.home-btn {
+  display: inline-block;
+  background-color: #d62828;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #b41f1f;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  .home-section {
+    flex-direction: column;
+  }
+  .home-photo {
+    width: 100%;
+  }
+  .slides img {
+    height: 200px;
+  }
+}
+
+/* ===== NEW SHOWCASE IMAGE STACK ===== */
+.showcase-carousel {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.showcase-slide {
+  display: none;
+  text-align: center;
+  padding: 30px 0 50px;
+}
+
+.showcase-slide.active {
+  display: block;
+}
+
+/* --- Image stack --- */
+.image-stack {
+  position: relative;
+  height: 320px;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.image-stack img {
+  position: absolute;
+  top: 30%;                          /* center vertically */
+  width: 55%;                        /* slightly smaller so all three fit */
+  height: auto;                      /* scale naturally */
+  transform: translateY(-50%) scale(0.95); /* align to center & subtle shrink */
+  object-fit: contain;               /* keep full image visible */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.image-stack img:nth-child(1) {
+  left: 0;
+  transform: rotate(-5deg) scale(0.95);
+  z-index: 1;
+}
+.image-stack img:nth-child(2) {
+  left: 20%;
+  transform: rotate(0deg) scale(1);
+  z-index: 2;
+}
+.image-stack img:nth-child(3) {
+  left: 40%;
+  transform: rotate(5deg) scale(0.95);
+  z-index: 1;
+}
+
+/* Hover = bring forward */
+.image-stack img:hover {
+  transform: scale(1.1) rotate(0deg);
+  z-index: 5;
+}
+
+/* --- Caption --- */
+.showcase-caption {
+  font-size: 1rem;
+  color: #222;
+  max-width: 700px;
+  margin: 10px auto 0;
+  padding: 10px 15px;
+}
+
+/* --- Arrows --- */
+.showcase-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.showcase-carousel:hover .showcase-controls {
+  opacity: 0.6;
+  pointer-events: all;
+}
+
+.showcase-controls button {
+  background: rgba(214, 40, 40, 0.85);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.showcase-controls button:hover {
+  opacity: 1;
+  background: #d62828;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-stack img {
+    width: 80%;
+    left: 10%;
+  }
+  .image-stack img:nth-child(1) { transform: rotate(-3deg) scale(0.95); }
+  .image-stack img:nth-child(3) { transform: rotate(3deg) scale(0.95); }
+}
