@@ -503,6 +503,13 @@ body {
   z-index: 0;
 }
 
+.showcase-slide h3{
+  font-size: 1.8rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: #111;
+}
+
 .showcase-slide.active {
   opacity: 1;
   transform: scale(1) rotateY(0deg);
@@ -514,22 +521,23 @@ body {
 /* --- Image stack --- */
 .image-stack {
   position: relative;
-  height: 320px;
+  height: 250px;
   width: 90%;
   margin: 0 auto 20px;
+  z-index: 1;
 }
 
 .image-stack img {
   position: absolute;
-  top: 30%;                          /* center vertically */
+  top: 2%;                          /* center vertically */
   width: 55%;                        /* slightly smaller so all three fit */
   height: auto;                      /* scale naturally */
-  transform: translateY(-50%) scale(0.95); /* align to center & subtle shrink */
   object-fit: contain;               /* keep full image visible */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: all 0.4s ease;
   cursor: pointer;
+  z-index: 2;
 }
 
 .image-stack img:nth-child(1) {
@@ -559,31 +567,26 @@ body {
   font-size: 1rem;
   color: #222;
   max-width: 700px;
-  margin: 10px auto 0;
-  padding: 10px 15px;
+  margin-top: 8px auto 0;
+  padding: 8px 15px;
+  line-height: 1.5;
 }
 
-/* --- Arrows --- */
+
+/* --- Arrows (fixed, independent z-index, no dead zone) --- */
 .showcase-controls {
   position: absolute;
-  top: 50%;
+  top: 50%; /* consistent distance from top */
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 20; /* 🔥 Keeps buttons on top of images */
-}
-
-.showcase-carousel:hover .showcase-controls {
-  opacity: 0.6;
-  pointer-events: all;
+  pointer-events: none; /* stops invisible strip from blocking hover */
 }
 
 .showcase-controls button {
-  background: rgba(214, 40, 40, 0.7);
+  pointer-events: all; /* clickable */
+  background: rgba(214, 40, 40, 0.8);
   border: none;
   color: white;
   font-size: 1.8rem;
@@ -591,7 +594,12 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 25; /* 🔥 Ensures button clicks always register */
+  opacity: 0;
+  z-index: 50; /* above everything else */
+}
+
+.showcase-carousel:hover .showcase-controls button {
+  opacity: 0.7;
 }
 
 .showcase-controls button:hover {
@@ -623,4 +631,38 @@ body {
   transform: rotateY(0deg);
   position: relative;
   z-index: 5;
+}
+
+/* ---- CODE SHOWCASE STYLING ---- */
+.code-snippets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+}
+
+.code-snippets pre {
+  width: 100%;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #f1f1f1;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  padding: 12px 15px;
+  border-left: 4px solid #d62828;
+  border-radius: 6px;
+  white-space: pre-wrap; /* wraps text nicely */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.code-snippets code {
+  display: block;
+  color: #f1f1f1;
 }

@@ -53,6 +53,7 @@
         <!-- IMAGE SLIDER -->
         <div class="showcase-carousel">
             <div class="showcase-slide active">
+                <h3>Non-Markovian Effects on Average Gate Fidelity</h3>
                 <div class="image-stack">
                 <img src="fidelity dissipation Markovian vs non-Markovian.png" alt="Photo 1">
                 <img src="fidelity tcut combined.png" alt="Photo 2">
@@ -66,21 +67,24 @@
             </div>
 
             <div class="showcase-slide">
-                <div class="image-stack">
-                <img src="images/current2a.jpg" alt="Photo 1">
-                <img src="images/current2b.jpg" alt="Photo 2">
-                <img src="images/current2c.jpg" alt="Photo 3">
-                </div>
-                <p class="showcase-caption">Developing this website and refining my web design.</p>
-            </div>
+                <h3>Quantum Gate Simulator (C++)</h3>
+                <div class="image-stack code-snippets">
+                    <pre><code>make
+            ./quantum_sim.exe --circuit "H CNOT" --two-qubits</code></pre>
 
-            <div class="showcase-slide">
-                <div class="image-stack">
-                <img src="images/current3a.jpg" alt="Photo 1">
-                <img src="images/current3b.jpg" alt="Photo 2">
-                <img src="images/current3c.jpg" alt="Photo 3">
+                    <pre><code>Initial 2-qubit: 1.000|00&gt; + 0.000|01&gt; + 0.000|10&gt; + 0.000|11&gt;
+            After H ⊗ I: 0.707|00&gt; + 0.000|01&gt; + 0.707|10&gt; + 0.000|11&gt;
+            After CNOT: 0.707|00&gt; + 0.000|01&gt; + 0.000|10&gt; + 0.707|11&gt;</code></pre>
                 </div>
-                <p class="showcase-caption">Training neural networks to predict molecular energies.</p>
+
+                <p class="showcase-caption">
+                    A lightweight simulator written in C++ that models single- and two-qubit quantum systems.
+                    Users can build and run circuits directly from the command line using gates like H, X, Z, and CNOT.
+                    This project demonstrates linear algebra with complex vectors, circuit parsing, and state evolution.
+                    <br><br>
+                    Learn more on the
+                    <a href="[LINK-TO-YOUR-GITHUB-REPO]" target="_blank">project page →</a>
+                </p>
             </div>
 
             <div class="showcase-controls">
