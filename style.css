@@ -576,7 +576,7 @@ body {
 /* --- Arrows (fixed, independent z-index, no dead zone) --- */
 .showcase-controls {
   position: absolute;
-  top: 50%; /* consistent distance from top */
+  top: 260px; /* consistent distance from top */
   left: 0;
   width: 100%;
   display: flex;
