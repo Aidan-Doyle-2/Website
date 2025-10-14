@@ -437,8 +437,17 @@ body {
   flex: 1.2;
 }
 
-.home-photo {
+.home-section .photo{
   flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-section .photo img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
 .home-photo .slider {
